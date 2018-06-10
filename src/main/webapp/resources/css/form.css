@@ -1,0 +1,18 @@
+.btn-submit {
+	background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+.btn-submit:hover {
+    opacity: 1;
+}
+.forgot-container {
+    position: relative;
+    margin: 0 auto;
+    max-width: 600px;
+}
