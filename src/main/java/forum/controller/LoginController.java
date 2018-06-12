@@ -17,7 +17,7 @@ import forum.service.AccountService;
 @SessionAttributes("username")
 public class LoginController {
 	@GetMapping
-	public String Default() {
+	public String index() {
 		return "login";
 	}
 	
@@ -30,7 +30,7 @@ public class LoginController {
 		
 		if (accountService.checkLogin(username,password)) {
 			modelmap.addAttribute("username",username);
-			return "index";
+			return "redirect:/";
 		}
 		return "login";
 	}

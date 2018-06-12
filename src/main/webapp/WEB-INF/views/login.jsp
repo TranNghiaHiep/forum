@@ -15,7 +15,7 @@
 <body>
 	<header>
 		<div class="container">
-			<h1><a href="/forum">Forum Hu Cau</a></h1>
+			<h1><a href="/forum/">Forum Hu Cau</a></h1>
 		</div>
 	</header>
     <form method="post" action="">
@@ -46,7 +46,7 @@
                     <input type="submit" class="btn-submit btn-block" value="Đăng nhập" />
                 </div>
 				<div>
-					<center><a href="/forum/forgot">Quên mật khẩu?</a>, <a href="/forum/register">Đăng ký</a>.</center>
+					<center><a href="/forum/forgot/">Quên mật khẩu?</a>, <a href="/forum/register/">Đăng ký</a>.</center>
 				</div>
             </div>
         </div>

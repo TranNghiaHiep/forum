@@ -47,13 +47,13 @@
 			        <span class="caret"></span></a>
 			        <ul class="dropdown-menu">
 						<li>
-							<a href="./category.html" title="Cộng Đồng"><i class="fa fa-comments-o"></i> <b>Cộng Đồng</b></a>
+							<a href="/forum/category/" title="Cộng Đồng"><i class="fa fa-comments-o"></i> <b>Cộng Đồng</b></a>
 						</li>
 						<li>
-							<a href="./category.html" title="Cộng Đồng Pascal"><i class="fa fa-comments-o"></i> <b>Cộng Đồng Pascal</b></a>
+							<a href="/forum/category/" title="Cộng Đồng Pascal"><i class="fa fa-comments-o"></i> <b>Cộng Đồng Pascal</b></a>
 						</li>
 						<li>
-							<a href="./category.html" title="Thảo luận Facebook"><i class="fa fa-comments-o"></i> <b>Thảo luận Facebook</b></a>
+							<a href="/forum/category/" title="Thảo luận Facebook"><i class="fa fa-comments-o"></i> <b>Thảo luận Facebook</b></a>
 						</li>
 					</ul>
 				</li>
@@ -65,8 +65,23 @@
 		        </li>
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
-				<li><a href="/forum/register"><span class="fa fa-sign-in"></span> Đăng kí</a></li>
-				<li><a href="/forum/login"><span class="fa fa-user-plus"></span> Đăng Nhập</a></li>
+		      <c:choose>
+		      	<c:when test="${username != null}">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle profile-image" data-toggle="dropdown">
+						<b>${username}</b> <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="/forum/info/"><i class="fa fa-user"></i> Account</a></li>
+							<li class="divider"></li>
+							<li><a href="/forum/exit/"><i class="fa fa-sign-out"></i> Đăng xuất</a></li>
+						</ul>
+					</li>
+		      	</c:when>
+		      	<c:otherwise>
+		      		<li><a href="/forum/register/"><span class="fa fa-sign-in"></span> Đăng kí</a></li>
+					<li><a href="/forum/login/"><span class="fa fa-user-plus"></span> Đăng Nhập</a></li>
+		      	</c:otherwise>
+		      </c:choose>
 			  </ul>
 		    </div>
 		  </div>
@@ -80,7 +95,7 @@
 	      <div class="content col-md-9">
 			<div class="slider"><img src="http://placehold.it/850x250"></div>
 			<div class="phdr">
-				<i class="fa fa-tags"></i> <b>Bài Viết Mới</b><a href="./create.html" class="badge pull-right" title="Gửi Bài Mới">Viết Bài Mới</a>
+				<i class="fa fa-tags"></i> <b>Bài Viết Mới</b><a href="create/" class="badge pull-right" title="Gửi Bài Mới">Viết Bài Mới</a>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
@@ -150,13 +165,13 @@
 	      	<div class="phdr"><i class="fa fa-list-alt"></i> <b>Chuyên Mục</b></div>
 	      	<div class="menu">
 	      		<div class="list-group-item">
-	      			<i class="fa fa-comments-o"></i> &nbsp;<a href="./category.html" title="Cộng Đồng"><b>Cộng Đồng</b></a>
+	      			<i class="fa fa-comments-o"></i> &nbsp;<a href="/forum/category/" title="Cộng Đồng"><b>Cộng Đồng</b></a>
 	      		</div>
 	      		<div class="list-group-item">
-	      			<i class="fa fa-comments-o"></i> &nbsp;<a href="./category.html" title="Cộng Đồng Pascal"><b>Cộng Đồng Pascal</b></a>
+	      			<i class="fa fa-comments-o"></i> &nbsp;<a href="/forum/category/" title="Cộng Đồng Pascal"><b>Cộng Đồng Pascal</b></a>
 	      		</div>
 	      		<div class="list-group-item">
-	      			<i class="fa fa-comments-o"></i> &nbsp;<a href="./category.html" title="Ban Quản Trị"><b>Cộng đồng Facebook</b></a>
+	      			<i class="fa fa-comments-o"></i> &nbsp;<a href="/forum/category/" title="Ban Quản Trị"><b>Cộng đồng Facebook</b></a>
 	      		</div>
 	      	</div>
 	      	<div class="phdr"><i class="fa fa-rss-square"></i> Thống kê Diễn Đàn</div>

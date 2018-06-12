@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ForgotController {
 
 	@GetMapping
-	public String Default() {
+	public String index() {
 		return "forgot";
 	}
 }

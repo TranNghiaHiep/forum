@@ -20,7 +20,7 @@ public class RegisterController {
 	AccountService accountService;
 	
 	@GetMapping
-	public String Default() {
+	public String index() {
 		return "register";
 	}
 	
@@ -33,7 +33,7 @@ public class RegisterController {
 			account.setUsername(username);
 			account.setPassword(password);
 			if (accountService.register(account)) {
-				return "login";
+				return "redirect:/login/";
 			}
 		} else {
 			System.out.println("Mật khẩu và xác nhận không đúng");
