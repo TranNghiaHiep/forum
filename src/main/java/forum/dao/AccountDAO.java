@@ -1,8 +1,11 @@
 package forum.dao;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,6 +13,7 @@ import forum.daoImp.IAccount;
 import forum.entity.Account;
 
 @Repository
+@Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class AccountDAO implements IAccount {
 
 	@Autowired
@@ -31,4 +35,20 @@ public class AccountDAO implements IAccount {
 		}
 		return false;
 	}
+	
+	@Transactional
+	public boolean register(Account account) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		try {
+			int id = (Integer) session.save(account);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Đăng ký thất bại");
+		}
+		return false;
+	}
+	
+	
 }

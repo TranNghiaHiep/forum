@@ -65,9 +65,9 @@
 		        </li>
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
-						  <li><a href="/forum/register"><span class="fa fa-sign-in"></span> Đăng kí</a></li>
-				  <li><a href="/forum/login"><span class="fa fa-user-plus"></span> Đăng Nhập</a></li>
-				      </ul>
+				<li><a href="/forum/register"><span class="fa fa-sign-in"></span> Đăng kí</a></li>
+				<li><a href="/forum/login"><span class="fa fa-user-plus"></span> Đăng Nhập</a></li>
+			  </ul>
 		    </div>
 		  </div>
 		</nav>

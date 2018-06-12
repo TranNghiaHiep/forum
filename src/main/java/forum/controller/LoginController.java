@@ -8,11 +8,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import forum.service.AccountService;
 
 @Controller
 @RequestMapping("/login")
+@SessionAttributes("username")
 public class LoginController {
 	@GetMapping
 	public String Default() {
@@ -27,6 +29,7 @@ public class LoginController {
 	public String loginProcess(@RequestParam String username, @RequestParam String password, ModelMap modelmap) {
 		
 		if (accountService.checkLogin(username,password)) {
+			modelmap.addAttribute("username",username);
 			return "index";
 		}
 		return "login";
