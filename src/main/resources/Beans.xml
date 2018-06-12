@@ -15,15 +15,21 @@
         http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 
-	<bean id="dataSource"
-		class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-		<property name="driverClassName"
-			value="com.mysql.jdbc.Driver" />
-		<property name="url"
-			value="jdbc:mysql://localhost:3306/forum" />
-		<property name="username" value="root" />
-		<property name="password" value="tranhiepTN3" />
-	</bean>
+		<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+			<property name="driverClassName" value="net.sourceforge.jtds.jdbc.Driver"></property>
+			<property name="url" value="jdbc:jtds:sqlserver://localhost:1433;databaseName=Forum;"></property>
+			<property name="username" value="sa"></property>
+			<property name="password" value="123456"></property>
+		</bean>
+<!-- 	<bean id="dataSource" -->
+<!-- 		class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"> -->
+<!-- 		<property name="driverClassName" -->
+<!-- 			value="com.mysql.jdbc.Driver" /> -->
+<!-- 		<property name="url" -->
+<!-- 			value="jdbc:mysql://localhost:3306/forum" /> -->
+<!-- 		<property name="username" value="root" /> -->
+<!-- 		<property name="password" value="tranhiepTN3" /> -->
+<!-- 	</bean> -->
 
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
@@ -31,7 +37,8 @@
 		<property name="packagesToScan" value="forum.entity" />
 		<property name="hibernateProperties">
 			<value>
-				hibernate.dialect=org.hibernate.dialect.MySQLDialect
+<!-- 				hibernate.dialect=org.hibernate.dialect.MySQLDialect -->
+					hibernate.dialect=org.hibernate.dialect.SQLServerDialect
 			</value>
 		</property>
 	</bean>
